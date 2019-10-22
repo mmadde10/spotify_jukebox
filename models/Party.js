@@ -9,7 +9,7 @@ var partySchema = new Schema({
   startTime: Date,
   endTime: Date,
   isActive: Boolean,
-  host: {type: Map, of: String}
+  hostName: String
 });
 
 var partyModel = mongoose.model('partyModel', partySchema );
