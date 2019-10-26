@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  div(class="row")
+    div(class="card")
+        div(class="card-content")
+            span(class="card-title") Sign In
+                form(method='POST' action='users/signin')
+                    div.form-group
+                        label(for='email') Email:
+                        input#email.form-control(type='email', placeholder='name@email.com' name='email')
+                    div.form-group
+                        label(for='pw') Password:
+                        input#pw.form-control(type='password' name='password')
+                    button.btn.btn-primary(type='submit') Sign In
+            div
+                button.btn.btn-primary(type='submit') Sign up   

@@ -1,4 +1,5 @@
 var Track = require('../models/track');
+var fetch = require('node-fetch')
 
 // Display list of all Aracks.
 exports.track_list = function(req, res) {
@@ -8,11 +9,6 @@ exports.track_list = function(req, res) {
 // Display detail page for a specific Arack.
 exports.track_detail = function(req, res) {
     res.send('NOT IMPLEMENTED: Track detail: ' + req.params.id);
-};
-
-// Display Arack create form on GET.
-exports.track_create_get = function(req, res) {
-    res.send('NOT IMPLEMENTED: Track create GET');
 };
 
 // Handle Arack create on POST.
@@ -39,3 +35,7 @@ exports.track_update_get = function(req, res) {
 exports.track_update_post = function(req, res) {
     res.send('NOT IMPLEMENTED: Track update POST');
 };
+
+exports.track_search_get = function(req, res){
+    res.send('NOT IMPLEMENTED: Track Search GET');
+}

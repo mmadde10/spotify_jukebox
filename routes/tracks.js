@@ -10,5 +10,9 @@ router.get('/', function (req, res) {
   router.get('/about', function (req, res) {
     res.send('About this wiki');
   })
+
+  router.get('/search', function (req, res) {
+    res.send('Get 10 search items');
+  })
   
   module.exports = router;

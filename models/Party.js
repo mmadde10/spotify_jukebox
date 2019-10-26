@@ -7,7 +7,6 @@ var partySchema = new Schema({
   _Id: Schema.Types.ObjectId,
   name: String,
   startTime: Date,
-  endTime: Date,
   isActive: Boolean,
   hostName: String
 });
