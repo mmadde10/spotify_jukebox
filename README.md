@@ -15,13 +15,13 @@ The Rest v1 API is described below.
 
 ## User
 
-## Get list of Users
+### Get list of Users
 
-### Request
+#### Request
 
 `GET /user`
 
-### Response
+#### Response
 
     HTTP/1.1 200 OK
     Date: Thu, 24 Feb 2011 12:36:30 GMT
@@ -32,13 +32,13 @@ The Rest v1 API is described below.
 
     []
 
-## Get your user information
+### Get your user information
 
-### Request
+#### Request
 
 `GET /users/me`
 
-### Response
+#### Response
 
     HTTP/1.1 200 OK
     Date: Thu, 24 Feb 2011 12:36:30 GMT
@@ -50,9 +50,9 @@ The Rest v1 API is described below.
     []
 
 
-## Create a new User
+### Create a new User
 
-### Request
+#### Request
 
 `POST /user/signup`
 
@@ -64,7 +64,7 @@ The Rest v1 API is described below.
 }
 ```
 
-### Response
+#### Response
 
     HTTP/1.1 201 Created
     Date: Thu, 24 Feb 2011 12:36:30 GMT
@@ -77,9 +77,9 @@ The Rest v1 API is described below.
     {"email": "your email",
 	"password": "your password"}
 
-## Authenticate as user
+### Authenticate as user
 
-### Request
+#### Request
 
 `POST /user/signin`
 
@@ -91,7 +91,7 @@ The Rest v1 API is described below.
 }
 ```
 
-### Response
+#### Response
 
     The response will return your token, and your basic info
 
@@ -104,13 +104,13 @@ The Rest v1 API is described below.
 ``` 
 ## Party
 
-## Get list of Parties
+### Get list of Parties
 
-### Request
+#### Request
 
 `GET /v1/parties`
 
-### Response
+#### Response
 
     HTTP/1.1 200 OK
     Date: Thu, 24 Feb 2011 12:36:30 GMT
