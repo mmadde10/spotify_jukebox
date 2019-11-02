@@ -3,13 +3,14 @@ var mongoose = require('mongoose');
 //Define a schema
 var Schema = mongoose.Schema;
 
+
 var partySchema = new Schema({
   _Id: Schema.Types.ObjectId,
   name: String,
   startTime: Date,
-  endTime: Date,
   isActive: Boolean,
-  host: {type: Map, of: String}
+  hostName: String,
+  playlist: []
 });
 
 var partyModel = mongoose.model('partyModel', partySchema );

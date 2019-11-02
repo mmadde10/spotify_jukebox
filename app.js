@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var tracksRouter = require('./routes/tracks');
+var partiesRouter = require('./routes/parties');
 
 require('dotenv').config({path: path.resolve(__dirname+'/.env')});
 var app = express();
@@ -34,11 +35,10 @@ var db = mongoose.connection;
 //Bind connection to error event (to get notification of connection errors)
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
-
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/tracks', tracksRouter);
+app.use('/v1/', indexRouter);
+app.use('/v1/users', usersRouter);
+app.use('/v1/tracks', tracksRouter);
+app.use('/v1/parties', partiesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

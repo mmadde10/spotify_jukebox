@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var track_controller = require('../controllers/trackController');
 
 // Home page route.
 router.get('/', function (req, res) {
@@ -9,6 +10,13 @@ router.get('/', function (req, res) {
   // About page route.
   router.get('/about', function (req, res) {
     res.send('About this wiki');
+  })
+
+  router.get('/track', track_controller.track_detail_get);
+
+
+  router.get('/search', function (req, res) {
+    res.send('Get 10 search items');
   })
   
   module.exports = router;

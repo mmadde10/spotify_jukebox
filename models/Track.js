@@ -12,5 +12,5 @@ var TrackSchema = new Schema({
   spotifyUrl: String
 });
 
-var TrackModel = mongoose.model('TrackModel', TrackSchema );
+var TrackModel = mongoose.model('trackModel', TrackSchema );
 module.exports = TrackModel;

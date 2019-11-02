@@ -4,9 +4,7 @@ var user_controller = require('../controllers/userController')
 const auth = require('../middleware/auth');
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+router.get('/', user_controller.index);
 
 // POST request for creating user.
 router.post('/signup', user_controller.user_create_post);

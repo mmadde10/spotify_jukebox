@@ -1,5 +1,16 @@
 var User = require('../models/user');
+const { body,validationResult } = require('express-validator');
+const { sanitizeBody } = require('express-validator');
 
+var async = require('async');
+
+exports.index = function(req, res){
+    res.render('signin', {});
+}
+
+exports.sigin = function(req, res){
+    res.render('siginin', {});
+}
 
 exports.user_list = function(req, res) {
     res.send('NOT IMPLEMENTED: User list');
@@ -27,6 +38,7 @@ exports.user_create_post = function(req, res) {
 };
 
 exports.user_signin_post = async function(req, res) {
+    console.log("signin req")
    try {
         User.findOne({'email': req.body.email}, function(err, user){
             if(!user) res.json({message: 'Login Failed, User not found'})
