@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 var track_controller = require('../controllers/trackController');
+const auth = require('../middleware/auth');
+
 
 // Home page route.
 router.get('/', function (req, res) {
@@ -12,11 +14,9 @@ router.get('/', function (req, res) {
     res.send('About this wiki');
   })
 
-  router.get('/track', track_controller.track_detail_get);
+  router.get('/track', auth, track_controller.track_detail_get);
 
 
-  router.get('/search', function (req, res) {
-    res.send('Get 10 search items');
-  })
+  router.post('/search', auth, track_controller.track_search_post)
   
   module.exports = router;

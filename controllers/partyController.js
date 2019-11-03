@@ -45,13 +45,12 @@ exports.party_create_post = function(req, res) {
 
 exports.party_update_post = function(req, res) {
     try{
-        Party.findOne({'id': req.body.id}, function(err, party){
-            if(!party) res.json({message: 'Party not found'})
-            res.json({message: 'Party here'})
-            // Insert track into playlist queue
+        Party.findByIdAndUpdate(req.params.partyId, {$push: {"playlist": "test"}}, function(err, model){
+            if(err) res.status(500).send(err);
+            res.status(200).send(model);
         })
     }
-    catch (err){
-        res.status(400).send(error)
+    catch (error){
+        res.status(400).send(error);
     }
 }

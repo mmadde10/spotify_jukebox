@@ -28,6 +28,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 var mongoDB = process.env.MONGODB_URL;
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
+console.log("keys: ", process.env.SPOTIFY_CLIENT_SECRET)
 
 //Get the default connection
 var db = mongoose.connection;
