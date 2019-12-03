@@ -24,7 +24,7 @@ exports.track_detail_get = function(req, res){
 }
 
 exports.track_search_post = function(req, res){
-    spotify.searchTracks(req.body.searchQuery, { limit : 3, offset : 2 }).then(
+    spotify.searchTracks(req.body.searchQuery, { limit : req.body.limit, offset : 2 }).then(
         function(data) {
             var track = create_track_json_helper(data.body);
             res.status(200).send(track);
@@ -39,35 +39,19 @@ exports.track_search_post = function(req, res){
 //WIP: im going to fix this up, i just needed to get the spotifi api to work for now
 create_track_json_helper = function(data){
     try{
-        var item1 = data["tracks"]['items'][0];
-        var item2 = data["tracks"]['items'][1];
-        var item3 = data["tracks"]['items'][2];
-        var trackObject = {"Track":
-                                {"id":item1['id'], 
-                                "name": item1['name'], 
-                                "artist": item1['artists'][0]['name'], 
-                                "href": item1['href'],
-                                "albumName": item1['album']['name'],
-                                "albumImage": item1['album']['images'][0]['url']}}
-        
-        var trackObject1 = {"Track":
-                                {"id":item2['id'], 
-                                "name": item2['name'], 
-                                "artist": item2['artists'][0]['name'], 
-                                "href": item2['href'],
-                                "albumName": item2['album']['name'],
-                                "albumImage": item2['album']['images'][0]['url']}}
-
-        var trackObject2 = {"Track":
-                                {"id":item3['id'], 
-                                "name": item3['name'], 
-                                "artist": item3['artists'][0]['name'], 
-                                "href": item3['href'],
-                                "albumName": item3['album']['name'],
-                                "albumImage": item3['album']['images'][0]['url']}}                        
-        console.log(trackObject);
-
-        return [trackObject, trackObject1, trackObject2]
+        var items = data["tracks"]['items'];
+        var itemsList = [];
+        for (i = 0; i < items.length; i++){
+            var trackObject = {"Track":
+                                {"id":items[i]['id'], 
+                                "name": items[i]['name'], 
+                                "artist": items[i]['artists'][0]['name'], 
+                                "href": items[i]['href'],
+                                "albumName": items[i]['album']['name'],
+                                "albumImage": items[i]['album']['images'][0]['url']}}
+            itemsList.push(trackObject);
+        }
+        return itemsList;
     }
     catch(err){
         console.log("errror")

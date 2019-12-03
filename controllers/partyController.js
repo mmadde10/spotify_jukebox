@@ -25,7 +25,6 @@ exports.party_detail_get = function(req, res) {
 
 // Handle Party create on POST.
 exports.party_create_post = function(req, res) {
-
     try {
         const party = new Party({
             name: req.body.name,
