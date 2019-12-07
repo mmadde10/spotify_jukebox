@@ -1,4 +1,4 @@
-var Party = require('../models/party');
+var Party = require('../models/Party');
 const { body,validationResult } = require('express-validator');
 const { sanitizeBody } = require('express-validator');
 var ObjectId = require('mongodb').ObjectId;

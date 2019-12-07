@@ -1,4 +1,4 @@
-var track = require('../models/track');
+var track = require('../models/Track');
 var fetch = require('node-fetch')
 var spotify = require('../middleware/spotifyAPI');
 

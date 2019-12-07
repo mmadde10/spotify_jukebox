@@ -1,4 +1,4 @@
-var User = require('../models/user');
+var User = require('../models/User');
 const { body,validationResult } = require('express-validator');
 const { sanitizeBody } = require('express-validator');
 

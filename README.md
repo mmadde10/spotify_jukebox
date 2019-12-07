@@ -121,3 +121,37 @@ The Rest v1 API is described below.
 
     []
 
+## Track
+
+### Search spotify for Track
+
+`POST /v1/tracks/search`
+
+#### Body 
+```
+{
+	"searchQuery":"artist:Katy Perry",
+	"limit": 10
+}
+```
+
+#### Response
+
+    HTTP/1.1 200 OK
+    Date: Thu, 24 Feb 2011 12:36:30 GMT
+    Status: 200 OK
+    Connection: close
+    Content-Type: application/json
+    Content-Length: 2
+
+    [{
+        "Track": {
+            "id": "6F5c58TMEs1byxUstkzVeM",
+            "name": "Roar",
+            "artist": "Katy Perry",
+            "href": "https://api.spotify.com/v1/tracks/6F5c58TMEs1byxUstkzVeM",
+            "albumName": "PRISM (Deluxe)",
+            "albumImage": "https://i.scdn.co/image/cefa154b3f01758fac6744465dbfd9d799c8a031"
+        },
+        ...
+    ]
