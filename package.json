@@ -21,7 +21,7 @@
     "mongoose": "^5.7.5",
     "morgan": "~1.9.1",
     "node-fetch": "^2.6.0",
-    "pug": "2.0.0-beta11",
+    "pug": "3.0.1",
     "spotify-web-api-node": "^4.0.0"
   },
   "devDependencies": {
